@@ -9,7 +9,11 @@ export function TodoInput(props) {
             <input value={inputValue} onChange={(e) => {
                 setInputValue(e.target.value)
             }} placeholder="Add task" />
-            <button onClick={() => {
+            
+            <button  onKeyDown={(e) => {
+                if (e.key === "Enter")
+            handleAddTodo(inputValue);}} 
+            onClick={() => {
                 if (!inputValue) { return }
                 handleAddTodo(inputValue)
                 setInputValue('')

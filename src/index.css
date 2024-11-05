@@ -126,6 +126,7 @@ hr {
   width: 100%;
   flex: 1;
   max-width: unset !important;
+  font-weight: bold;
 }
 
 @keyframes widen {

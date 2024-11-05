@@ -6,14 +6,18 @@ export function TodoInput(props) {
 
     return (
         <div className="input-container">
-            <input value={inputValue} onChange={(e) => {
-                setInputValue(e.target.value)
-            }} placeholder="Add task" />
-            
-            <button  onKeyDown={(e) => {
-                if (e.key === "Enter")
-            handleAddTodo(inputValue);}} 
-            onClick={() => {
+            <input
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                onKeyDown={(e) => {
+                    if (e.key === 'Enter' && inputValue) {
+                        handleAddTodo(inputValue);
+                        setInputValue(''); 
+                    }
+                }}
+                placeholder="Add task"
+            />
+            <button onClick={() => {
                 if (!inputValue) { return }
                 handleAddTodo(inputValue)
                 setInputValue('')

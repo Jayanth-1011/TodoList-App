@@ -20,6 +20,8 @@ h1 {
 
 .tab-container {
   overflow-x: auto;
+  overflow-y: hidden;
+  
 }
 
 .tab-button {
